@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinguaCards - Language Learning</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">LinguaCards</div>
+        <div id="user-progress">Level 1</div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat-card">
+          <h3>Words Learned</h3>
+          <p id="words-learned">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Current Streak</h3>
+          <p id="current-streak">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Accuracy</h3>
+          <p id="accuracy">0%</p>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-front">
+            <div class="word" id="front-word">こんにちは</div>
+            <div class="hint">Click to flip</div>
+          </div>
+          <div class="flashcard-back">
+            <div class="word" id="back-word">Hello</div>
+            <div class="hint">Konnichiwa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn-secondary" id="btn-hard">Hard</button>
+        <button class="btn-primary" id="btn-easy">Easy</button>
+        <button class="btn-secondary" id="btn-next">Next →</button>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

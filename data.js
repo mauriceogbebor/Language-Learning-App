@@ -1,0 +1,48 @@
+// data.js
+const vocabulary = [
+  {
+    id: 1,
+    front: 'こんにちは',
+    back: 'Hello',
+    pronunciation: 'Konnichiwa',
+    interval: 1,
+    easeFactor: 2.5,
+    nextReview: new Date(),
+  },
+  {
+    id: 2,
+    front: '犬',
+    back: 'Dog',
+    pronunciation: 'Inu',
+    interval: 1,
+    easeFactor: 2.5,
+    nextReview: new Date(),
+  },
+  {
+    id: 3,
+    front: '猫',
+    back: 'Cat',
+    pronunciation: 'Neko',
+    interval: 1,
+    easeFactor: 2.5,
+    nextReview: new Date(),
+  },
+  {
+    id: 4,
+    front: 'ありがとう',
+    back: 'Thank you',
+    pronunciation: 'Arigatou',
+    interval: 1,
+    easeFactor: 2.5,
+    nextReview: new Date(),
+  },
+  {
+    id: 5,
+    front: '水',
+    back: 'Water',
+    pronunciation: 'Mizu',
+    interval: 1,
+    easeFactor: 2.5,
+    nextReview: new Date(),
+  },
+];
