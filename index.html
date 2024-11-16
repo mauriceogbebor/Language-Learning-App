@@ -10,51 +10,123 @@
     <header>
       <div class="header-content">
         <div class="logo">LinguaCards</div>
-        <div id="user-progress">Level 1</div>
+        <div class="nav-controls">
+          <select id="deck-select" class="select-style">
+            <option value="">Select Deck</option>
+          </select>
+          <button id="new-deck-btn" class="btn-secondary">New Deck</button>
+          <button id="import-export-btn" class="btn-secondary">
+            Import/Export
+          </button>
+        </div>
       </div>
     </header>
 
     <div class="container">
-      <div class="stats">
-        <div class="stat-card">
-          <h3>Words Learned</h3>
-          <p id="words-learned">0</p>
-        </div>
-        <div class="stat-card">
-          <h3>Current Streak</h3>
-          <p id="current-streak">0</p>
-        </div>
-        <div class="stat-card">
-          <h3>Accuracy</h3>
-          <p id="accuracy">0%</p>
-        </div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill"></div>
-      </div>
-
-      <div class="flashcard-container">
-        <div class="flashcard" id="flashcard">
-          <div class="flashcard-front">
-            <div class="word" id="front-word">こんにちは</div>
-            <div class="hint">Click to flip</div>
+      <div id="main-menu" class="screen active">
+        <h2>Your Progress</h2>
+        <div class="stats">
+          <div class="stat-card">
+            <h3>Words Learned</h3>
+            <p id="words-learned">0</p>
           </div>
-          <div class="flashcard-back">
-            <div class="word" id="back-word">Hello</div>
-            <div class="hint">Konnichiwa</div>
+          <div class="stat-card">
+            <h3>Current Streak</h3>
+            <p id="current-streak">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>Accuracy</h3>
+            <p id="accuracy">0%</p>
+          </div>
+          <div class="stat-card">
+            <h3>Due Reviews</h3>
+            <p id="due-reviews">0</p>
           </div>
         </div>
+
+        <div class="decks-grid" id="decks-grid"></div>
       </div>
 
-      <div class="controls">
-        <button class="btn-secondary" id="btn-hard">Hard</button>
-        <button class="btn-primary" id="btn-easy">Easy</button>
-        <button class="btn-secondary" id="btn-next">Next →</button>
+      <div id="study-screen" class="screen">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="study-info">
+          <span id="study-progress">Card 0/0</span>
+          <span id="deck-name">Deck Name</span>
+        </div>
+
+        <div class="flashcard-container">
+          <div class="flashcard" id="flashcard">
+            <div class="flashcard-front">
+              <div class="word" id="front-word"></div>
+              <div class="hint">Click to flip</div>
+            </div>
+            <div class="flashcard-back">
+              <div class="word" id="back-word"></div>
+              <div class="hint" id="pronunciation"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="btn-secondary" id="btn-hard">Hard</button>
+          <button class="btn-primary" id="btn-easy">Easy</button>
+          <button class="btn-secondary" id="btn-next">Next →</button>
+        </div>
+      </div>
+
+      <div id="new-deck-screen" class="screen">
+        <h2>Create New Deck</h2>
+        <form id="new-deck-form">
+          <div class="form-group">
+            <label for="deck-name-input">Deck Name:</label>
+            <input type="text" id="deck-name-input" required />
+          </div>
+          <div class="form-group">
+            <label for="deck-language">Language:</label>
+            <select id="deck-language" required>
+              <option value="japanese">Japanese</option>
+              <option value="spanish">Spanish</option>
+              <option value="french">French</option>
+              <option value="german">German</option>
+              <option value="chinese">Chinese</option>
+            </select>
+          </div>
+          <div id="cards-container">
+            <!-- Card input fields will be added here -->
+          </div>
+          <button type="button" id="add-card-btn" class="btn-secondary">
+            Add Card
+          </button>
+          <button type="submit" class="btn-primary">Create Deck</button>
+        </form>
+      </div>
+
+      <div id="import-export-screen" class="screen">
+        <h2>Import/Export Decks</h2>
+        <div class="import-export-controls">
+          <div class="export-section">
+            <h3>Export Decks</h3>
+            <button id="export-btn" class="btn-primary">Export to JSON</button>
+          </div>
+          <div class="import-section">
+            <h3>Import Decks</h3>
+            <input type="file" id="import-file" accept=".json" />
+            <button id="import-btn" class="btn-primary">
+              Import from JSON
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/spaced-repetition.js"></script>
+    <script src="js/deck-manager.js"></script>
+    <script src="js/ui-manager.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
